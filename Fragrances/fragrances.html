@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fragrances</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Cedarville+Cursive&family=Dancing+Script:wght@400..700&family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&family=Exile&family=Great+Vibes&family=Kapakana:wght@300..400&family=M+PLUS+Rounded+1c&family=Monoton&family=Pacifico&family=Permanent+Marker&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&family=Satisfy&family=Sevillana&family=Shadows+Into+Light&family=Style+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      nav {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 60px;
+        color: white;
+      }
+
+      nav > h2 {
+        font-size: 30px;
+      }
+
+      nav > h3 {
+        padding-top: 16px;
+      }
+
+      #hero_section > #image_backdrop::before {
+        content: "";
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        background-color: white;
+        z-index: -1;
+        filter: blur(150px);
+        transform: translate(9rem, 5rem);
+      }
+
+      #hero_section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #hero_heading > h1 {
+        font-family: "Style Script", cursive;
+        font-size: 70px;
+        padding-left: 80px;
+        margin: 0;
+        animation: fade-in-out 3s ease-in-out infinite;
+      }
+
+      @keyframes fade-in-out {
+        0% {
+          opacity: 0.4;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.4;
+        }
+      }
+
+      #hero_heading > p {
+        font-family: Ubuntu, sans-serif;
+        padding-left: 80px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 20px;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .buttons > button {
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 10px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.192);
+        border: 2px solid white;
+      }
+
+      #sample_heading {
+        font-family: "Style Script", cursive;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .midnight_oud {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #ffffff1a;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      .midnight_oud > div > img {
+        width: 400px;
+        /* padding-left: 200px; */
+      }
+
+      .midnight_oud > div {
+        width: 40%;
+      }
+
+      .midnight_oud > div > div > h1 {
+        font-size: 28px;
+        font-family: "Ubuntu", sans-serif;
+        display: flex;
+        gap: 10px;
+      }
+
+      .midnight_oud > div > div > p {
+        font-size: 15px;
+        font-family: "Ubuntu", sans-serif;
+      }
+
+      .midnight_oud > div > div > h1 > img {
+        width: 30px;
+        border: 2px;
+        border-radius: 6px;
+      }
+
+      .midnight_oud > div > div > button {
+        position: relative;
+        padding: 12px 28px;
+        font-size: 16px;
+        color: #fff;
+        background: linear-gradient(120deg, #ff0080, #7928ca);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        overflow: hidden;
+        z-index: 1;
+        transition: all 0.4s ease;
+        opacity: 0.6;
+        transform: scale(0.9);
+        animation: popupAnim 2s ease-out forwards alternate infinite;
+      }
+
+      footer {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+      }
+
+      .buttons > button {
+        position: relative;
+        padding: 12px 28px;
+        font-size: 16px;
+        color: #fff;
+        background: linear-gradient(120deg, #ff0080, #7928ca);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        overflow: hidden;
+        z-index: 1;
+        transition: all 0.4s ease;
+        opacity: 0.6;
+        transform: scale(0.9);
+        animation: popupAnim 2s ease-out forwards alternate infinite;
+      }
+
+      .buttons > button::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(60deg, #6a00f4, #ff1493, #1e90ff);
+        background-size: 300% 300%;
+        animation: gradientFlow 5s linear infinite;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        filter: blur(12px);
+      }
+
+      @keyframes gradientFlow {
+        0% {
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes popupAnim {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #1e90ff;
+        width: 2px;
+      }
+
+      ::-webkit-scrollbar {
+        background-color: transparent;
+      }
+
+      ::-webkit-scrollbar-track {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="goToUp">
+      <nav>
+        <h2>Fragrances</h2>
+        <h3>Home</h3>
+        <h3>About</h3>
+        <h3>Services</h3>
+        <h3>Contact</h3>
+      </nav>
+    </header>
+    <main>
+      <section id="hero_section">
+        <div id="hero_heading">
+          <h1>Unveil the Essence of Elegance</h1>
+          <p>
+            Step into a world of timeless luxury where each fragrance tells a
+            story...
+          </p>
+          <div class="buttons">
+            <button>Explore Collection</button>
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <div id="image_backdrop">
+          <img src="hero-removebg-preview.png" />
+        </div>
+      </section>
+      <section id="samples">
+        <div id="sample_heading">
+          <h1>Sample Fragrances for Demo</h1>
+        </div>
+        <div class="midnight_oud">
+          <div>
+            <img src="Midnight_Oud.jpg" />
+          </div>
+          <div>
+            <div>
+              <h1><img src="midnight_oud_icon.png" />Midnight Oud</h1>
+              <p>
+                Midnight Oud is not just a fragrance, it's a statement. With its
+                deep base of smoky agarwood (oud) fused with warm leather and
+                exotic resins, it’s designed for those who walk into a room and
+                immediately capture attention. Accents of spicy saffron and dark
+                amber give it a mysterious depth, making it ideal for nighttime
+                affairs, formal evenings, or moments when you want to feel
+                powerful and magnetic. It’s masculine, bold, and utterly
+                captivating.
+              </p>
+            </div>
+            <div>
+              <button class="buttons">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="midnight_oud">
+          <div>
+            <div>
+              <h1><img src="velvet_blossom_icon.png" />Velvet Blossom</h1>
+              <p>
+                Velvet Blossom is the fragrance of grace and elegance. A
+                romantic blend of blooming jasmine, Bulgarian rose, and creamy
+                vanilla comes together in a scent that is delicate yet
+                empowering. Underneath lies a soft musk and sandalwood base that
+                gives it a grounded, mature presence. It's perfect for daytime
+                outings, weddings, or whenever you want to express your feminine
+                charm with confidence. The scent lingers gently, like the memory
+                of a perfect spring morning.
+              </p>
+            </div>
+            <div>
+              <button class="buttons">Buy Now</button>
+            </div>
+          </div>
+          <div>
+            <img src="Velvet_Blossom.png" />
+          </div>
+        </div>
+        <div class="midnight_oud">
+          <div>
+            <img src="Citrus_rush.jpg" />
+          </div>
+          <div>
+            <div>
+              <h1><img src="citrus_rush_icon.png" />Citrus Rush</h1>
+              <p>
+                Citrus Rush is your daily dose of freshness and positivity. With
+                an explosion of sun-ripened oranges, tangy lemon peel, and a
+                twist of bergamot, this perfume brings instant energy. A heart
+                of green tea and mint adds a soothing calmness, while light
+                cedarwood gives it a subtle, earthy finish. Ideal for casual
+                days, summer outings, or your gym bag—Citrus Rush is vibrant,
+                clean, and undeniably refreshing. It’s the scent of motivation
+                in a bottle.
+              </p>
+            </div>
+            <div>
+              <button class="buttons">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="midnight_oud">
+          <div>
+            <div>
+              <h1><img src="noir_desire_icon.png" />Noir Desire</h1>
+              <p>
+                Noir Desire is a luxurious scent built for passion and intrigue.
+                With opening notes of blackcurrant and wild berries, it draws
+                you in instantly. The heart reveals seductive patchouli and
+                rose, wrapped in a velvety layer of dark chocolate and a smoky
+                vetiver base. It’s rich, sultry, and made for evenings when you
+                want to feel irresistible. Ideal for romantic nights, clubs, or
+                whenever you want to own the spotlight—Noir Desire is a sensory
+                addiction.
+              </p>
+            </div>
+            <div>
+              <button class="buttons">Buy Now</button>
+            </div>
+          </div>
+          <div>
+            <img src="Noir_Desire.png" />
+          </div>
+        </div>
+        <div class="midnight_oud">
+          <div>
+            <img src="ocean_drift.jpg" />
+          </div>
+          <div>
+            <div>
+              <h1><img src="ocean_drift_icon.png" />Ocean Drift</h1>
+              <p>
+                Ocean Drift is like a walk on the beach at sunrise. With its
+                refreshing blend of sea salt, aquatic moss, and driftwood, it
+                brings the calm and clarity of the ocean right to your senses.
+                Hints of lavender and mint uplift the mood, while a base of
+                cedar and musk anchors the scent with sophistication. Perfect
+                for everyday use, travel, or office wear, Ocean Drift is crisp,
+                clean, and effortlessly cool.
+              </p>
+            </div>
+            <div>
+              <button class="buttons">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="midnight_oud">
+          <div>
+            <div>
+              <h1><img src="amber_echo_icon.png" /> Amber Echo</h1>
+              <p>
+                Amber Echo is the embodiment of warmth and depth. It opens with
+                spicy cinnamon and cardamom, leading into a luxurious heart of
+                rich amber and creamy tonka bean. Hints of sweet vanilla and
+                smoked wood complete the experience, making it the perfect
+                companion for cooler evenings, cozy dinners, or introspective
+                moments. Amber Echo is long-lasting, soulful, and leaves behind
+                a comforting trail that others won’t forget.
+              </p>
+            </div>
+            <div>
+              <button class="buttons">Buy Now</button>
+            </div>
+          </div>
+          <div>
+            <img src="amber_echo.jpg" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      &copy; All copy right reserved. TeAm SP
+
+      <button>
+        <a href="#goToUp">Up</a>
+      </button>
+    </footer>
+  </body>
+</html>
